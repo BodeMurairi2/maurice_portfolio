@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maurice Tyler | Admin Login</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin-login">
+<header class="site-header header-dark">
+  <div class="container navbar">
+    <a class="brand" href="index.html">MN</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-shell" aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact Me</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+      </ul>
+    </nav>
+    <a class="profile-link active-profile" href="admin-login.html" aria-label="Admin login">
+      <span class="profile-icon">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"></path></svg>
+      </span>
+      <span>Admin</span>
+    </a>
+  </div>
+</header>
+
+<main class="auth-main">
+  <div class="auth-split">
+
+    <!-- Left: Brand panel -->
+    <div class="auth-brand-panel">
+      <div class="auth-brand-dots"></div>
+      <div class="auth-brand-content">
+        <span class="auth-logo">MN</span>
+        <h2>Admin Portal</h2>
+        <p>Manage your portfolio content, projects, skills, blog posts, and visitor messages — all from one secure dashboard.</p>
+
+        <ul class="auth-features">
+          <li>
+            <span class="auth-feat-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </span>
+            <span>Full content management for projects &amp; skills</span>
+          </li>
+          <li>
+            <span class="auth-feat-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </span>
+            <span>Create, edit, and moderate blog posts</span>
+          </li>
+          <li>
+            <span class="auth-feat-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span>Monitor visitor messages &amp; analytics</span>
+          </li>
+          <li>
+            <span class="auth-feat-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span>Secure, role-based access control</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right: Form panel -->
+    <div class="auth-form-panel">
+      <div class="auth-form-wrap">
+        <p class="eyebrow">Admin Access</p>
+        <h1>Sign in</h1>
+        <p class="auth-form-sub">Enter your credentials to access the dashboard.</p>
+
+        <form id="admin-login-form" class="auth-form">
+          <div class="contact-field">
+            <label for="al-username">Username</label>
+            <input id="al-username" type="text" name="username" placeholder="Enter your username" required>
+          </div>
+          <div class="contact-field">
+            <label for="al-password">Password</label>
+            <input id="al-password" type="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button class="btn auth-submit" type="submit">Log In</button>
+          <p class="form-status" id="admin-login-status" aria-live="polite"></p>
+        </form>
+
+        <div class="auth-demo-note">
+          <strong>Demo credentials</strong>
+          <div class="auth-demo-row">
+            <span>Username</span><code>admin</code>
+          </div>
+          <div class="auth-demo-row">
+            <span>Password</span><code>portfolio123</code>
+          </div>
+        </div>
+
+        <a class="auth-back-link" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to portfolio
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <span class="footer-brand">MN</span>
+      <p class="footer-tagline">Building secure digital infrastructure for the next generation. Let's create technology that matters.</p>
+      <div class="footer-social-icons">
+        <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://x.com/YOUR-HANDLE" target="_blank" rel="noreferrer" aria-label="X / Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/YOUR-HANDLE" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="blog.html">Blogs</a>
+        <a href="index.html#contact">Contact Me</a>
+      </nav>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get in Touch</h3>
+      <div class="footer-contact-list">
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:mauricenshimyumukiza@nexvecta.com">mauricenshimyumukiza@nexvecta.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+250791430371">+250 791 430 371</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Kigali, Rwanda</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Maurice Nshimyumukiza. All Rights Reserved.</p>
+    <p>Built with care &amp; deployed with purpose.</p>
+  </div>
+</footer>
+
+<script src="../java script/script.js"></script>
+</body>
+</html>
