@@ -4,23 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maurice Tyler | Portfolio</title>
+<meta name="description" content="All projects built by Maurice Nshimyumukiza — backend APIs, platforms, and technology for social impact.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-page="portfolio">
-<header class="site-header">
+
+<header class="site-header header-dark">
   <div class="container navbar">
-    <a class="brand" href="index.html">Maurice Tyler</a>
+    <a class="brand" href="index.html">MN</a>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
     <nav class="nav-shell" aria-label="Primary">
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="skills.html">Skills</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
         <li><a class="active" href="portfolio.html">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact Me</a></li>
         <li><a href="blog.html">Blogs</a></li>
       </ul>
     </nav>
+
     <a class="profile-link" href="admin-login.html" aria-label="Admin login">
       <span class="profile-icon">
         <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"></path></svg>
@@ -31,17 +40,361 @@
 </header>
 
 <main>
-  <section class="page-hero">
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="pf-hero">
     <div class="container">
-      <p class="eyebrow">Portfolio Page</p>
-      <h1>Professional background and projects in dedicated expandable sections.</h1>
-      <p class="page-intro">Education, experience, projects, certifications, and milestone achievements are loaded from the backend and organized for quick scanning.</p>
+      <p class="eyebrow" style="color:rgba(255,255,255,0.50);">My Work</p>
+      <h1>Projects &amp; Builds</h1>
+      <p class="pf-hero-sub">From financial intelligence APIs to community platforms — every project is built with a commitment to technical excellence and real-world impact.</p>
+      <div class="pf-stats-row">
+        <div class="pf-stat">
+          <strong>5+</strong>
+          <span>Projects Built</span>
+        </div>
+        <div class="pf-stat-divider"></div>
+        <div class="pf-stat">
+          <strong>10+</strong>
+          <span>Technologies Used</span>
+        </div>
+        <div class="pf-stat-divider"></div>
+        <div class="pf-stat">
+          <strong>2+</strong>
+          <span>Years Building</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container section-stack" id="portfolio-sections"></div>
+  <!-- ── Education & Journey ──────────────────────────────── -->
+  <section class="edu-section">
+    <div class="container">
+
+      <div class="edu-header">
+        <p class="eyebrow">Background</p>
+        <h2>Education &amp; Journey</h2>
+        <span class="about-rule" style="margin:14px auto 0;"></span>
+      </div>
+
+      <div class="journey-grid">
+
+        <!-- Education Timeline -->
+        <div>
+          <h3 class="journey-col-title">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Education
+          </h3>
+          <div class="timeline">
+
+            <div class="tl-item tl-current">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-badge">2024 – Present · Current</span>
+                <h4>African Leadership University (ALU)</h4>
+                <p class="tl-sub">BSc Software Engineering &middot; Kigali, Rwanda</p>
+                <p>Pursuing a degree in Software Engineering with a focus on backend systems, distributed computing, API design, and technology for social impact. Building real-world engineering skills while contributing to Africa's digital transformation.</p>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-badge">A-Level &middot; 2022 – 2023</span>
+                <h4>Saint Ignatius High School</h4>
+                <p class="tl-sub">MPC — Mathematics, Physics &amp; Computer Science</p>
+                <p>Studied the MPC combination at advanced level — the technical pathway that shaped my systems thinking, mathematical rigour, and the analytical approach I bring to every engineering challenge today.</p>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-badge">Ordinary Level &middot; 2019 – 2021</span>
+                <h4>G.S Mater Dei</h4>
+                <p class="tl-sub">Secondary School — Ordinary Level</p>
+                <p>Completed secondary education with a strong grounding in core sciences and mathematics, cultivating early curiosity about technology, problem-solving, and how systems work at their foundations.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Experience & Achievements -->
+        <div>
+          <h3 class="journey-col-title">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Experience &amp; Achievements
+          </h3>
+          <div class="exp-cards">
+
+            <div class="exp-card">
+              <span class="exp-icon exp-icon-teal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <div class="exp-text">
+                <h4>Group Leader — PLP (Peace and Love Proclaimers)</h4>
+                <p>Led an in-school student group dedicated to peace-building and community values. Managed a team, organised regular sessions, and represented the group in school-wide events and programmes.</p>
+                <span class="exp-badge exp-badge-leadership">Leadership</span>
+              </div>
+            </div>
+
+            <div class="exp-card">
+              <span class="exp-icon exp-icon-gold">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </span>
+              <div class="exp-text">
+                <h4>Choir Leader — Community Choir</h4>
+                <p>Led a community choir outside school, coordinating rehearsals, managing team dynamics, and performing at community events. Strengthened collaboration, public presence, and organisational ability.</p>
+                <span class="exp-badge exp-badge-leadership">Leadership &middot; Community</span>
+              </div>
+            </div>
+
+            <div class="exp-card">
+              <span class="exp-icon exp-icon-blue">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </span>
+              <div class="exp-text">
+                <h4>Sales Representative &middot; ~6 months</h4>
+                <p>Worked as a salesman for approximately six months, gaining practical experience in customer communication, resilience under pressure, and a real-world understanding of business operations.</p>
+                <span class="exp-badge exp-badge-work">Work Experience</span>
+              </div>
+            </div>
+
+            <div class="exp-card">
+              <span class="exp-icon exp-icon-purple">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </span>
+              <div class="exp-text">
+                <h4>Founder — Community Initiative</h4>
+                <p>Founded a small grassroots initiative aimed at solving a local problem. While it did not reach its intended scale, it was a formative experience in entrepreneurial thinking, resourcefulness, and learning from failure with integrity.</p>
+                <span class="exp-badge exp-badge-initiative">Entrepreneurship</span>
+              </div>
+            </div>
+
+            <div class="exp-card">
+              <span class="exp-icon exp-icon-teal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+              <div class="exp-text">
+                <h4>Teacher Facilitator — Nursery School</h4>
+                <p>Served as a teacher facilitator in a nursery school, supporting early childhood learning and development. This experience built patience, empathy, and a skill I carry into engineering: the ability to make the complex simple.</p>
+                <span class="exp-badge exp-badge-volunteer">Education &middot; Volunteer</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
+
+  <!-- ── Filter + Projects ─────────────────────────────────── -->
+  <section class="pf-projects-section" style="background:var(--surface-strong);">
+    <div class="container">
+
+      <div class="pf-filter-bar">
+        <button class="pf-filter-btn active" data-filter="all" type="button">All Projects</button>
+        <button class="pf-filter-btn" data-filter="backend" type="button">Backend Engineering</button>
+        <button class="pf-filter-btn" data-filter="fullstack" type="button">Full-Stack</button>
+        <button class="pf-filter-btn" data-filter="infrastructure" type="button">Infrastructure</button>
+        <button class="pf-filter-btn" data-filter="research" type="button">Research &amp; Impact</button>
+      </div>
+
+      <div class="pf-all-grid" id="projects-grid">
+
+        <!-- Project 01 -->
+        <article class="pf-card" data-category="backend">
+          <div class="pf-card-top">
+            <div class="fp-meta">
+              <span class="fp-number">01</span>
+              <span class="fp-category">Backend Engineering</span>
+            </div>
+            <span class="pf-icon pf-icon-teal">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+          </div>
+          <div class="pf-card-body">
+            <h3>Financial Intelligence API</h3>
+            <p>A RESTful API system designed to detect anomalous financial transactions and generate real-time risk reports. Built with a focus on data integrity, secure authentication, and high-throughput request handling. Features JWT auth, rate limiting, and PostgreSQL-backed audit trails.</p>
+            <div class="fp-tags">
+              <span>Python</span>
+              <span>PostgreSQL</span>
+              <span>REST API</span>
+              <span>Docker</span>
+              <span>JWT Auth</span>
+            </div>
+          </div>
+          <div class="pf-card-bottom">
+            <div class="pf-highlights">
+              <span>Real-time anomaly detection</span>
+              <span>Secure auth</span>
+              <span>High throughput</span>
+            </div>
+            <a class="fp-link" href="#" aria-label="View Financial Intelligence API project">
+              View Project
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="pf-card" data-category="fullstack">
+          <div class="pf-card-top">
+            <div class="fp-meta">
+              <span class="fp-number">02</span>
+              <span class="fp-category">Full-Stack Platform</span>
+            </div>
+            <span class="pf-icon pf-icon-green">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+          </div>
+          <div class="pf-card-body">
+            <h3>Umubyeyi Foundation Platform</h3>
+            <p>An educational infrastructure platform enabling community learning programs, resource sharing, and impact tracking across Rwanda. Designed to bridge the digital divide through accessible technology, with a distributed backend and load balancing for reliability.</p>
+            <div class="fp-tags">
+              <span>Node.js</span>
+              <span>MySQL</span>
+              <span>Linux</span>
+              <span>HAProxy</span>
+              <span>REST API</span>
+            </div>
+          </div>
+          <div class="pf-card-bottom">
+            <div class="pf-highlights">
+              <span>Community impact</span>
+              <span>Load balanced</span>
+              <span>Distributed system</span>
+            </div>
+            <a class="fp-link" href="#" aria-label="View Umubyeyi Foundation Platform project">
+              View Project
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="pf-card" data-category="infrastructure">
+          <div class="pf-card-top">
+            <div class="fp-meta">
+              <span class="fp-number">03</span>
+              <span class="fp-category">Infrastructure &amp; DevOps</span>
+            </div>
+            <span class="pf-icon pf-icon-blue">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </span>
+          </div>
+          <div class="pf-card-body">
+            <h3>Distributed Load Balancer Setup</h3>
+            <p>Designed and deployed a multi-node distributed system using HAProxy across Linux servers. Implemented automated health checks, failover strategies, and log monitoring to ensure high uptime for production workloads. Fully scripted with Bash for reproducible deployments.</p>
+            <div class="fp-tags">
+              <span>HAProxy</span>
+              <span>Linux</span>
+              <span>Bash</span>
+              <span>Nginx</span>
+              <span>Docker</span>
+            </div>
+          </div>
+          <div class="pf-card-bottom">
+            <div class="pf-highlights">
+              <span>High availability</span>
+              <span>Automated failover</span>
+              <span>Health monitoring</span>
+            </div>
+            <a class="fp-link" href="#" aria-label="View Distributed Load Balancer project">
+              View Project
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="pf-card" data-category="backend">
+          <div class="pf-card-top">
+            <div class="fp-meta">
+              <span class="fp-number">04</span>
+              <span class="fp-category">Backend Engineering</span>
+            </div>
+            <span class="pf-icon pf-icon-orange">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+          </div>
+          <div class="pf-card-body">
+            <h3>Portfolio Backend API</h3>
+            <p>A self-hosted RESTful backend powering this portfolio — managing blog posts, project data, and contact messages. Includes a lightweight admin dashboard with session-based authentication, content management, and a simple message inbox for recruiter enquiries.</p>
+            <div class="fp-tags">
+              <span>Python</span>
+              <span>PostgreSQL</span>
+              <span>REST API</span>
+              <span>Docker</span>
+            </div>
+          </div>
+          <div class="pf-card-bottom">
+            <div class="pf-highlights">
+              <span>Admin dashboard</span>
+              <span>Content management</span>
+              <span>Self-hosted</span>
+            </div>
+            <a class="fp-link" href="#" aria-label="View Portfolio Backend API project">
+              View Project
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 05 -->
+        <article class="pf-card" data-category="research">
+          <div class="pf-card-top">
+            <div class="fp-meta">
+              <span class="fp-number">05</span>
+              <span class="fp-category">Research &amp; Impact</span>
+            </div>
+            <span class="pf-icon pf-icon-purple">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </span>
+          </div>
+          <div class="pf-card-body">
+            <h3>Digital Literacy Initiative</h3>
+            <p>A research-driven initiative to assess digital literacy gaps in Rwandan communities and develop a technology education curriculum. Collaborated with local educators and the Umubyeyi Foundation to create accessible learning pathways, measuring outcomes across multiple cohorts.</p>
+            <div class="fp-tags">
+              <span>Research</span>
+              <span>Curriculum Design</span>
+              <span>Data Analysis</span>
+              <span>Community</span>
+            </div>
+          </div>
+          <div class="pf-card-bottom">
+            <div class="pf-highlights">
+              <span>Community reach</span>
+              <span>Evidence-based</span>
+              <span>Social impact</span>
+            </div>
+            <a class="fp-link" href="#" aria-label="View Digital Literacy Initiative">
+              Learn More
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+
+      <p class="pf-empty-msg" id="pf-empty" style="display:none;">No projects in this category yet.</p>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="contact-dark pf-cta">
+    <div class="container pf-cta-inner">
+      <div class="about-heading">
+        <h2 style="color:#fff;">Have a project in mind?</h2>
+        <span class="about-rule"></span>
+      </div>
+      <p class="pf-cta-sub">I'm open to collaborations, internships, and exciting engineering challenges. Let's build something meaningful together.</p>
+      <a class="btn btn-gold" href="index.html#contact">Get in Touch</a>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -64,17 +417,19 @@
         </a>
       </div>
     </div>
+
     <div class="footer-col">
       <h3>Quick Links</h3>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
         <a href="index.html#skills">Skills</a>
-        <a href="index.html#portfolio">Portfolio</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="blog.html">Blogs</a>
         <a href="index.html#contact">Contact Me</a>
       </nav>
     </div>
+
     <div class="footer-col">
       <h3>Get in Touch</h3>
       <div class="footer-contact-list">
@@ -94,11 +449,39 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; 2026 Maurice Nshimyumukiza. All Rights Reserved.</p>
-    <p>Built with care &amp; deployed with purpose.</p>
+    <p>&copy; 2026 Maurice Tyler. Built with passion for technology and social impact.</p>
+    <p>Open to internships, research opportunities, and collaborations.</p>
   </div>
 </footer>
 
 <script src="../java script/script.js"></script>
+<script>
+(function () {
+  var filterBtns = document.querySelectorAll('.pf-filter-btn');
+  var cards = document.querySelectorAll('.pf-card');
+  var emptyMsg = document.getElementById('pf-empty');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.getAttribute('data-filter');
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+}());
+</script>
 </body>
 </html>

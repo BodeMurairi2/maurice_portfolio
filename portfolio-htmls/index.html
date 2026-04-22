@@ -47,7 +47,7 @@
         <p class="hero-text">I am <strong>Maurice Nshimyumukiza</strong>, a backend-focused builder creating dependable APIs, scalable system workflows, and technology initiatives that solve real community problems.</p>
         <div class="hero-actions">
           <a class="btn btn-gold" href="#contact">Contact Me</a>
-          <a class="btn btn-outline-gold" href="#">My Resume</a>
+          <a class="btn btn-outline-gold" href="../assets/Maurice_Resume.pdf" target="_blank" rel="noopener">My Resume</a>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
     <div class="container lang-grid">
       <div class="lang-pitch">
         <h2>Develop your platform with excellent languages.</h2>
-        <a class="btn btn-dark lang-explore" href="skills.html">Explore</a>
+        <a class="btn btn-dark lang-explore" href="portfolio.html">Explore</a>
       </div>
 
       <div class="lang-cards">
@@ -221,7 +221,7 @@
         </div>
       </div>
 
-      <div class="cs-grid">
+      <div class="cs-grid" id="cs-grid">
         <div class="cs-group">
           <p class="cs-group-label">Languages &amp; Frameworks</p>
           <div class="cs-pills">
@@ -249,9 +249,41 @@
             <span>System Design</span>
           </div>
         </div>
+
+        <!-- Hidden extra skill groups — revealed by "View All Skills" -->
+        <div class="cs-group cs-group-hidden">
+          <p class="cs-group-label">Security &amp; Networking</p>
+          <div class="cs-pills">
+            <span>OWASP Top 10</span>
+            <span>API Security</span>
+            <span>Network Security</span>
+            <span>JWT &amp; OAuth</span>
+            <span>Firewall Basics</span>
+          </div>
+        </div>
+        <div class="cs-group cs-group-hidden">
+          <p class="cs-group-label">Tools &amp; Workflow</p>
+          <div class="cs-pills">
+            <span>Postman</span>
+            <span>VS Code</span>
+            <span>Linux CLI</span>
+            <span>Docker Compose</span>
+            <span>GitHub Actions</span>
+          </div>
+        </div>
+        <div class="cs-group cs-group-hidden">
+          <p class="cs-group-label">Research &amp; Communication</p>
+          <div class="cs-pills">
+            <span>Technical Writing</span>
+            <span>Research Methodology</span>
+            <span>Data Analysis</span>
+            <span>Project Planning</span>
+            <span>Leadership</span>
+          </div>
+        </div>
       </div>
       <div class="section-cta-row">
-        <a class="btn btn-outline-brand" href="skills.html">View All Skills</a>
+        <button class="btn btn-outline-brand" id="skills-toggle-btn" type="button">View All Skills</button>
       </div>
     </div>
   </section>
@@ -389,5 +421,20 @@
 </footer>
 
 <script src="../java script/script.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('skills-toggle-btn');
+  if (!btn) return;
+  var hidden = document.querySelectorAll('.cs-group-hidden');
+  btn.addEventListener('click', function () {
+    var expanded = btn.getAttribute('data-expanded') === 'true';
+    hidden.forEach(function (el) {
+      el.style.display = expanded ? 'none' : 'grid';
+    });
+    btn.setAttribute('data-expanded', expanded ? 'false' : 'true');
+    btn.textContent = expanded ? 'View All Skills' : 'Show Less';
+  });
+}());
+</script>
 </body>
 </html>
