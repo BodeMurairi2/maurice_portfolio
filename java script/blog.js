@@ -357,5 +357,233 @@ const BLOG_ARTICLES = [
           </a>
         </div>
       </div>
+    </section>
+
+    <section class="eng-section">
+      <div class="container">
+        <div class="eng-wrap">
+
+          <!-- Like bar -->
+          <div class="eng-like-row">
+            <button class="eng-like-btn" id="eng-like-btn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span id="eng-like-label">Like this article</span>
+            </button>
+            <span class="eng-like-count" id="eng-like-count">0 likes</span>
+          </div>
+
+          <!-- Comments header -->
+          <div class="eng-section-head">
+            <h3 id="eng-comment-heading">Discussion</h3>
+          </div>
+
+          <!-- Comments list -->
+          <div id="eng-comments-list"></div>
+
+          <!-- New comment form -->
+          <div class="eng-new-comment">
+            <h4>Leave a comment</h4>
+            <form id="eng-comment-form" novalidate>
+              <div class="eng-form-row">
+                <input id="eng-author" type="text" placeholder="Your name *" required>
+                <input id="eng-email" type="email" placeholder="Email (optional)">
+              </div>
+              <textarea id="eng-text" rows="4" placeholder="Share your thoughts on this article…" required></textarea>
+              <button type="submit" class="btn btn-outline-brand">Post Comment</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </section>`;
+
+  initEngagement(article.id);
+}());
+
+/* ── Likes & Comments engine ─────────────────────────────── */
+
+(function () {
+
+  function engStore(key) {
+    try { var v = localStorage.getItem('mn_' + key); return v ? JSON.parse(v) : (key === 'likes' ? {} : {}); }
+    catch (e) { return {}; }
+  }
+
+  function engSave(key, val) {
+    localStorage.setItem('mn_' + key, JSON.stringify(val));
+  }
+
+  function engGenId(p) {
+    return p + '-' + Date.now() + '-' + Math.floor(Math.random() * 9999);
+  }
+
+  function engEsc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function engInitials(name) {
+    return (name || 'A').trim().split(' ').map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
+  }
+
+  function fmtDate(iso) {
+    try { return new Date(iso).toLocaleDateString('en-GB', { year:'numeric', month:'short', day:'numeric' }); }
+    catch(e) { return iso; }
+  }
+
+  window.initEngagement = function (articleId) {
+    var likeBtn   = document.getElementById('eng-like-btn');
+    var likeCount = document.getElementById('eng-like-count');
+    var likeLabel = document.getElementById('eng-like-label');
+    if (!likeBtn) return;
+
+    /* ── LIKES ── */
+    function renderLikes() {
+      var likes   = engStore('likes');
+      var liked   = engStore('liked_articles');
+      var count   = likes[articleId] || 0;
+      var hasLiked = !!liked[articleId];
+      likeCount.textContent = count + (count === 1 ? ' like' : ' likes');
+      likeLabel.textContent = hasLiked ? 'Liked!' : 'Like this article';
+      likeBtn.classList.toggle('eng-liked', hasLiked);
+    }
+
+    likeBtn.addEventListener('click', function () {
+      var likes  = engStore('likes');
+      var liked  = engStore('liked_articles');
+      if (liked[articleId]) return;
+      likes[articleId] = (likes[articleId] || 0) + 1;
+      liked[articleId] = true;
+      engSave('likes', likes);
+      engSave('liked_articles', liked);
+      renderLikes();
+      likeBtn.style.transform = 'scale(1.18)';
+      setTimeout(function(){ likeBtn.style.transform = ''; }, 200);
+    });
+
+    renderLikes();
+
+    /* ── COMMENTS ── */
+    function getComments() {
+      var all = engStore('comments');
+      return Array.isArray(all[articleId]) ? all[articleId] : [];
+    }
+
+    function saveComments(list) {
+      var all = engStore('comments');
+      all[articleId] = list;
+      engSave('comments', all);
+    }
+
+    function renderComments() {
+      var list = getComments();
+      var heading = document.getElementById('eng-comment-heading');
+      if (heading) heading.textContent = list.length === 0 ? 'Discussion' : 'Discussion (' + list.length + ')';
+
+      var container = document.getElementById('eng-comments-list');
+      if (!container) return;
+
+      if (list.length === 0) {
+        container.innerHTML = '<p class="eng-no-comments">No comments yet. Be the first to share your thoughts!</p>';
+        return;
+      }
+
+      container.innerHTML = list.map(function (c) {
+        var repliesHtml = '';
+        (c.replies || []).forEach(function (r) {
+          repliesHtml += '<div class="eng-reply-item">' +
+            '<div class="eng-reply-avatar">' + engEsc(engInitials(r.author)) + '</div>' +
+            '<div class="eng-reply-body">' +
+              '<div class="eng-reply-header"><strong>' + engEsc(r.author) + '</strong><span>' + engEsc(fmtDate(r.date)) + '</span></div>' +
+              '<p>' + engEsc(r.text) + '</p>' +
+            '</div></div>';
+        });
+
+        var adminHtml = '';
+        if (c.adminReply) {
+          adminHtml = '<div class="eng-admin-reply">' +
+            '<div class="eng-admin-badge"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Maurice replied</div>' +
+            '<p>' + engEsc(c.adminReply) + '</p>' +
+          '</div>';
+        }
+
+        return '<div class="eng-comment" id="cmt-' + engEsc(c.id) + '">' +
+          '<div class="eng-comment-header">' +
+            '<div class="eng-cmt-avatar">' + engEsc(engInitials(c.author)) + '</div>' +
+            '<div class="eng-cmt-info"><strong>' + engEsc(c.author) + '</strong><span>' + engEsc(fmtDate(c.date)) + '</span></div>' +
+            '<button class="eng-reply-toggle" type="button" data-cid="' + engEsc(c.id) + '">Reply</button>' +
+          '</div>' +
+          '<div class="eng-comment-text"><p>' + engEsc(c.text) + '</p></div>' +
+          adminHtml +
+          (repliesHtml ? '<div class="eng-replies">' + repliesHtml + '</div>' : '') +
+          '<div class="eng-reply-form" id="rf-' + engEsc(c.id) + '" style="display:none;">' +
+            '<div class="eng-form-row"><input type="text" class="eng-ri-author" placeholder="Your name *"></div>' +
+            '<textarea class="eng-ri-text" rows="3" placeholder="Write your reply…"></textarea>' +
+            '<div style="display:flex;gap:10px;margin-top:8px;">' +
+              '<button type="button" class="btn btn-outline-brand eng-submit-reply" data-cid="' + engEsc(c.id) + '" style="min-height:38px;padding:8px 18px;font-size:0.84rem;">Post Reply</button>' +
+              '<button type="button" class="eng-cancel-reply" data-cid="' + engEsc(c.id) + '" style="background:transparent;border:0;color:var(--muted);font-size:0.84rem;cursor:pointer;">Cancel</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      /* bind reply toggles */
+      container.querySelectorAll('.eng-reply-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var rf = document.getElementById('rf-' + btn.dataset.cid);
+          if (rf) { rf.style.display = rf.style.display === 'none' ? 'block' : 'none'; }
+        });
+      });
+
+      /* bind cancel */
+      container.querySelectorAll('.eng-cancel-reply').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var rf = document.getElementById('rf-' + btn.dataset.cid);
+          if (rf) rf.style.display = 'none';
+        });
+      });
+
+      /* bind submit reply */
+      container.querySelectorAll('.eng-submit-reply').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var cid = btn.dataset.cid;
+          var rf  = document.getElementById('rf-' + cid);
+          var nameEl = rf.querySelector('.eng-ri-author');
+          var textEl = rf.querySelector('.eng-ri-text');
+          if (!nameEl.value.trim() || !textEl.value.trim()) {
+            nameEl.style.borderColor = '#c0392b';
+            return;
+          }
+          nameEl.style.borderColor = '';
+          var list = getComments();
+          var cmt  = list.find(function(x){ return x.id === cid; });
+          if (!cmt) return;
+          if (!cmt.replies) cmt.replies = [];
+          cmt.replies.push({ id: engGenId('r'), author: nameEl.value.trim(), text: textEl.value.trim(), date: new Date().toISOString() });
+          saveComments(list);
+          renderComments();
+        });
+      });
+    }
+
+    /* New comment form */
+    var commentForm = document.getElementById('eng-comment-form');
+    if (commentForm) {
+      commentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var author = document.getElementById('eng-author').value.trim();
+        var text   = document.getElementById('eng-text').value.trim();
+        if (!author || !text) return;
+        var list = getComments();
+        list.push({ id: engGenId('c'), author: author, text: text, date: new Date().toISOString(), adminReply: null, replies: [] });
+        saveComments(list);
+        commentForm.reset();
+        renderComments();
+        var container = document.getElementById('eng-comments-list');
+        if (container) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    renderComments();
+  };
+
 }());

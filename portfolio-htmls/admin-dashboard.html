@@ -641,6 +641,259 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 
+.eng-comment-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.eng-comment-replies {
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eng-comment-reply-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.eng-comment-reply-avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(94,102,94,0.15);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.eng-comment-reply-body strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.eng-comment-reply-body p {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.eng-admin-reply-block {
+  margin-top: 8px;
+  background: linear-gradient(135deg, rgba(15,107,88,0.07), rgba(15,107,88,0.03));
+  border-left: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 12px;
+}
+
+.eng-admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.eng-admin-badge svg {
+  width: 11px; height: 11px;
+  stroke: var(--brand);
+  fill: none;
+  stroke-width: 2;
+}
+
+.eng-admin-reply-block p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.eng-reply-as-admin {
+  background: transparent;
+  border: 1px solid var(--brand);
+  border-radius: 6px;
+  color: var(--brand);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background 0.14s, color 0.14s;
+  white-space: nowrap;
+}
+
+.eng-reply-as-admin:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.eng-admin-reply-form {
+  margin-top: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eng-admin-reply-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.84rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+  background: #fafdf9;
+}
+
+.eng-admin-reply-form textarea:focus { border-color: var(--brand); }
+
+.eng-admin-reply-form-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.eng-save-reply-btn {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.14s;
+}
+
+.eng-save-reply-btn:hover { background: var(--brand-deep); }
+
+.eng-cancel-reply-btn {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 7px 10px;
+}
+
+/* ── Messages section ────────────────────────────────────── */
+.msg-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s;
+}
+
+.msg-card.unread {
+  border-left: 3px solid var(--brand);
+}
+
+.msg-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.msg-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(15,107,88,0.12);
+  color: var(--brand);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.msg-meta {
+  flex: 1;
+}
+
+.msg-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.msg-email-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.msg-subject {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.msg-body {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.msg-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.msg-reply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.14s;
+}
+
+.msg-reply-btn:hover { background: var(--brand-deep); }
+
+.msg-reply-btn svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.msg-unread-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
 /* ── Modal ────────────────────────────────────────────────── */
 .adm-modal-overlay {
   position: fixed;
@@ -873,6 +1126,10 @@ img { display: block; max-width: 100%; }
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         Engagement
       </button>
+      <button class="adm-nav-btn" data-panel="messages">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Messages <span id="msg-badge" style="display:none;background:#e05252;color:#fff;border-radius:999px;font-size:0.7rem;font-weight:700;padding:1px 7px;margin-left:4px;"></span>
+      </button>
     </nav>
 
     <div class="adm-sidebar-footer">
@@ -1013,10 +1270,22 @@ img { display: block; max-width: 100%; }
         <div class="adm-panel-head">
           <div>
             <h1>Engagement</h1>
-            <p>View likes and reader comments across all articles. Click any row to expand comments.</p>
+            <p>View likes and reader comments across all articles. Click any row to expand and reply.</p>
           </div>
         </div>
         <div id="engagement-list"></div>
+      </div>
+
+      <!-- ══ MESSAGES ═══════════════════════════════════════ -->
+      <div id="panel-messages" class="adm-panel">
+        <div class="adm-panel-head">
+          <div>
+            <h1>Messages</h1>
+            <p>Contact form submissions from your portfolio. Reply directly via email.</p>
+          </div>
+          <button class="adm-btn adm-btn-secondary" onclick="markAllRead()">Mark all read</button>
+        </div>
+        <div id="messages-list"></div>
       </div>
 
     </main>
@@ -1177,7 +1446,7 @@ document.getElementById('modal-save').addEventListener('click', function () {
 /* ══════════════════════════════════════════════════════════
    NAVIGATION
 ══════════════════════════════════════════════════════════ */
-var PANEL_TITLES = { overview: 'Overview', articles: 'Articles', portfolio: 'Portfolio', engagement: 'Engagement' };
+var PANEL_TITLES = { overview: 'Overview', articles: 'Articles', portfolio: 'Portfolio', engagement: 'Engagement', messages: 'Messages' };
 
 function showPanel(id) {
   document.querySelectorAll('.adm-panel').forEach(function (p) { p.classList.remove('active'); });
@@ -1192,6 +1461,7 @@ function showPanel(id) {
   if (id === 'articles')   renderArticles();
   if (id === 'portfolio')  { renderProjects(); renderEducation(); renderExperience(); }
   if (id === 'engagement') renderEngagement();
+  if (id === 'messages')   renderMessages();
 }
 
 document.querySelectorAll('.adm-nav-btn').forEach(function (btn) {
@@ -1236,6 +1506,10 @@ function renderOverview() {
   var experience = getStore('experience');
   var likes      = getStore('likes');
   var comments   = getStore('comments');
+  var msgs = []; try { msgs = JSON.parse(localStorage.getItem('mn_messages') || '[]'); } catch (_) {}
+  var unreadMsgs = msgs.filter(function (m) { return !m.read; }).length;
+
+  updateMsgBadge(msgs);
 
   var totalLikes = Object.values(likes).reduce(function (s, v) { return s + (v || 0); }, 0);
   var totalComments = Object.values(comments).reduce(function (s, v) { return s + (Array.isArray(v) ? v.length : 0); }, 0);
@@ -1244,7 +1518,8 @@ function renderOverview() {
     { icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>', label: 'Articles', value: articles.length, cls: 'teal' },
     { icon: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>', label: 'Projects', value: projects.length, cls: 'gold' },
     { icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>', label: 'Total Likes', value: totalLikes, cls: 'blue' },
-    { icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', label: 'Total Comments', value: totalComments, cls: 'purple' }
+    { icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', label: 'Comments', value: totalComments, cls: 'purple' },
+    { icon: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>', label: 'Unread Messages', value: unreadMsgs, cls: 'teal' }
   ].map(function (s) {
     return '<div class="adm-stat-card">' +
       '<div class="adm-stat-icon ' + s.cls + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + s.icon + '</svg></div>' +
@@ -1616,39 +1891,113 @@ function deleteExperience(id) {
 /* ══════════════════════════════════════════════════════════
    ENGAGEMENT (read-only)
 ══════════════════════════════════════════════════════════ */
-function renderEngagement() {
-  var articles = getStore('articles');
-  var likes    = getStore('likes');
-  var comments = getStore('comments');
-  var list     = document.getElementById('engagement-list');
+/* Metadata for static blog articles (mirrors IDs from blog.js BLOG_ARTICLES) */
+var BLOG_META = {
+  'financial-intelligence-api':    { title: 'Financial Intelligence API', category: 'Backend Engineering', date: '2026-01-15' },
+  'postgresql-vs-mongodb':         { title: 'PostgreSQL vs MongoDB', category: 'Databases', date: '2026-01-28' },
+  'scalable-rest-apis':            { title: 'Scalable REST APIs', category: 'Backend Engineering', date: '2026-02-05' },
+  'docker-for-backend':            { title: 'Docker for Backend Developers', category: 'DevOps', date: '2026-02-14' },
+  'haproxy-load-balancing':        { title: 'HAProxy Load Balancing in Production', category: 'Infrastructure', date: '2026-02-20' },
+  'rest-api-best-practices':       { title: 'REST API Best Practices', category: 'Backend Engineering', date: '2026-03-01' },
+  'distributed-systems-fundamentals': { title: 'Distributed Systems Fundamentals', category: 'Systems', date: '2026-03-10' },
+  'tech-community-education':      { title: 'Technology for Community Education', category: 'Social Impact', date: '2026-03-18' },
+  'umubyeyi-digital-divide':       { title: 'Umubyeyi & the Digital Divide', category: 'Social Impact', date: '2026-03-25' },
+  'api-security-authentication':   { title: 'API Security & Authentication', category: 'Security', date: '2026-04-01' },
+  'cybercrime-africa':             { title: 'Cybercrime in Africa', category: 'Security', date: '2026-04-08' }
+};
 
-  if (articles.length === 0) {
+function renderEngagement() {
+  var adminArticles = getStore('articles');
+  var likes         = getStore('likes');
+  var comments      = getStore('comments');
+  var list          = document.getElementById('engagement-list');
+
+  /* Build a unified list: admin articles + static blog articles (deduplicated) */
+  var unified = adminArticles.map(function (a) {
+    return { id: a.id, title: a.title, category: a.category, date: a.date, published: a.published };
+  });
+
+  Object.keys(BLOG_META).forEach(function (id) {
+    if (!unified.find(function (a) { return a.id === id; })) {
+      var m = BLOG_META[id];
+      unified.push({ id: id, title: m.title, category: m.category, date: m.date, published: true });
+    }
+  });
+
+  /* Also surface any article that already has real engagement data */
+  Object.keys(comments).concat(Object.keys(likes)).forEach(function (id) {
+    if (!unified.find(function (a) { return a.id === id; })) {
+      unified.push({ id: id, title: id, category: '—', date: '', published: true });
+    }
+  });
+
+  /* Only show articles that actually have engagement or are published */
+  var toShow = unified.filter(function (a) {
+    return (likes[a.id] || 0) > 0 || (comments[a.id] || []).length > 0 || a.published;
+  });
+
+  if (toShow.length === 0) {
     list.innerHTML = '<div class="empty-note">No articles to show engagement for.</div>';
     return;
   }
 
-  list.innerHTML = articles.map(function (a) {
+  list.innerHTML = toShow.map(function (a) {
     var lCount = likes[a.id] || 0;
-    var cList  = comments[a.id] || [];
+    var cList  = Array.isArray(comments[a.id]) ? comments[a.id] : [];
+
     var commentsHtml = cList.length === 0
-      ? '<div class="eng-no-comments">No comments yet on this article.</div>'
+      ? '<div class="eng-no-comments">No comments yet.</div>'
       : cList.map(function (c) {
-          var initials = (c.author || 'A').substring(0, 2).toUpperCase();
-          return '<div class="eng-comment-item">' +
+          var initials = (c.author || 'A').replace(/\s+/g, ' ').trim().split(' ').map(function(w){ return w[0]; }).join('').substring(0,2).toUpperCase();
+
+          /* Nested user replies */
+          var repliesHtml = (c.replies || []).map(function (r) {
+            var ri = (r.author || 'A').replace(/\s+/g, ' ').trim().split(' ').map(function(w){ return w[0]; }).join('').substring(0,2).toUpperCase();
+            return '<div class="eng-comment-reply-item">' +
+              '<div class="eng-comment-reply-avatar">' + ri + '</div>' +
+              '<div class="eng-comment-reply-body">' +
+                '<strong>' + esc(r.author) + '</strong>' +
+                '<p>' + esc(r.text) + '</p>' +
+              '</div></div>';
+          }).join('');
+
+          /* Admin reply block */
+          var adminHtml = c.adminReply
+            ? '<div class="eng-admin-reply-block">' +
+                '<div class="eng-admin-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Maurice replied</div>' +
+                '<p>' + esc(c.adminReply) + '</p>' +
+              '</div>'
+            : '';
+
+          return '<div class="eng-comment-item" id="adm-cmt-' + esc(c.id) + '">' +
             '<div class="eng-comment-avatar">' + initials + '</div>' +
-            '<div class="eng-comment-text">' +
-              '<strong>' + esc(c.author) + '</strong>' +
+            '<div class="eng-comment-text" style="flex:1;">' +
+              '<div class="eng-comment-meta-row">' +
+                '<strong>' + esc(c.author) + '</strong>' +
+                '<span class="eng-comment-date" style="margin-left:8px;">' + esc(fmtEngDate(c.date)) + '</span>' +
+                '<button class="eng-reply-as-admin" type="button" data-article="' + esc(a.id) + '" data-cid="' + esc(c.id) + '">' +
+                  (c.adminReply ? '&#9998; Edit reply' : '+ Reply as Maurice') +
+                '</button>' +
+              '</div>' +
               '<p>' + esc(c.text) + '</p>' +
+              adminHtml +
+              (repliesHtml ? '<div class="eng-comment-replies">' + repliesHtml + '</div>' : '') +
+              '<div class="eng-admin-reply-form" id="adm-rf-' + esc(c.id) + '">' +
+                '<textarea rows="3" placeholder="Write your reply as Maurice…">' + esc(c.adminReply || '') + '</textarea>' +
+                '<div class="eng-admin-reply-form-btns">' +
+                  '<button type="button" class="eng-save-reply-btn" data-article="' + esc(a.id) + '" data-cid="' + esc(c.id) + '">Save Reply</button>' +
+                  '<button type="button" class="eng-cancel-reply-btn" data-cid="' + esc(c.id) + '">Cancel</button>' +
+                '</div>' +
+              '</div>' +
             '</div>' +
-            '<div class="eng-comment-date">' + esc(c.date) + '</div>' +
-            '</div>';
+          '</div>';
         }).join('');
 
     return '<div class="eng-article-row">' +
       '<div class="eng-article-head" onclick="toggleEngRow(this)">' +
-        '<div>' +
+        '<div style="min-width:0;">' +
           '<div class="eng-article-title">' + esc(a.title) + '</div>' +
-          '<div class="eng-article-meta">' + esc(a.category) + ' &middot; ' + esc(a.date) + ' &middot; ' +
+          '<div class="eng-article-meta">' + esc(a.category) + (a.date ? ' &middot; ' + esc(a.date) : '') + ' &middot; ' +
             (a.published ? '<span style="color:var(--brand);">Published</span>' : 'Draft') + '</div>' +
         '</div>' +
         '<div class="eng-stats">' +
@@ -1666,8 +2015,120 @@ function renderEngagement() {
       '<div class="eng-comments-body">' +
         '<div style="padding-top:14px;">' + commentsHtml + '</div>' +
       '</div>' +
-      '</div>';
+    '</div>';
   }).join('');
+
+  /* Bind reply-as-Maurice buttons */
+  list.querySelectorAll('.eng-reply-as-admin').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var rf = document.getElementById('adm-rf-' + btn.dataset.cid);
+      if (rf) { rf.style.display = rf.style.display === 'flex' ? 'none' : 'flex'; }
+    });
+  });
+
+  /* Bind cancel buttons */
+  list.querySelectorAll('.eng-cancel-reply-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var rf = document.getElementById('adm-rf-' + btn.dataset.cid);
+      if (rf) rf.style.display = 'none';
+    });
+  });
+
+  /* Bind save reply buttons */
+  list.querySelectorAll('.eng-save-reply-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var articleId = btn.dataset.article;
+      var cid       = btn.dataset.cid;
+      var rf        = document.getElementById('adm-rf-' + cid);
+      var textarea  = rf ? rf.querySelector('textarea') : null;
+      if (!textarea) return;
+      var replyText = textarea.value.trim();
+      if (!replyText) { textarea.style.borderColor = '#c0392b'; return; }
+      textarea.style.borderColor = '';
+
+      /* Update comment adminReply in mn_comments */
+      var allComments = getStore('comments');
+      var cList = Array.isArray(allComments[articleId]) ? allComments[articleId] : [];
+      var cmt   = cList.find(function (x) { return x.id === cid; });
+      if (cmt) {
+        cmt.adminReply = replyText;
+        allComments[articleId] = cList;
+        setStore('comments', allComments);
+      }
+      showToast('Reply saved.');
+      renderEngagement();
+    });
+  });
+}
+
+function renderMessages() {
+  var list = document.getElementById('messages-list');
+  var msgs = [];
+  try { msgs = JSON.parse(localStorage.getItem('mn_messages') || '[]'); } catch (_) {}
+
+  updateMsgBadge(msgs);
+
+  if (msgs.length === 0) {
+    list.innerHTML = '<div class="empty-note">No contact messages yet. Messages from the contact form will appear here.</div>';
+    return;
+  }
+
+  list.innerHTML = msgs.map(function (m) {
+    var initials = (m.name || 'U').replace(/\s+/g,' ').trim().split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+    var mailtoSubject = encodeURIComponent('Re: ' + (m.subject || 'Your message'));
+    var mailtoBody    = encodeURIComponent('\n\n---\nOriginal message from ' + (m.name || '') + ':\n' + (m.message || ''));
+    return '<div class="msg-card' + (m.read ? '' : ' unread') + '" id="msg-' + esc(m.id) + '">' +
+      '<div class="msg-card-header">' +
+        (m.read ? '' : '<div class="msg-unread-dot"></div>') +
+        '<div class="msg-avatar">' + initials + '</div>' +
+        '<div class="msg-meta">' +
+          '<div class="msg-name">' + esc(m.name) + '</div>' +
+          '<div class="msg-email-date">' + esc(m.email) + ' &middot; ' + esc(fmtEngDate(m.date)) + '</div>' +
+        '</div>' +
+      '</div>' +
+      (m.subject ? '<div class="msg-subject">' + esc(m.subject) + '</div>' : '') +
+      '<p class="msg-body">' + esc(m.message) + '</p>' +
+      '<div class="msg-actions">' +
+        '<a class="msg-reply-btn" href="mailto:' + esc(m.email) + '?subject=' + mailtoSubject + '&body=' + mailtoBody + '">' +
+          '<svg viewBox="0 0 24 24"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>' +
+          'Reply by email' +
+        '</a>' +
+        (!m.read ? '<button style="background:transparent;border:1px solid var(--line);border-radius:8px;padding:7px 14px;font-size:0.8rem;color:var(--muted);cursor:pointer;" onclick="markMsgRead(\'' + esc(m.id) + '\')" type="button">Mark read</button>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function markMsgRead(id) {
+  var msgs = [];
+  try { msgs = JSON.parse(localStorage.getItem('mn_messages') || '[]'); } catch (_) {}
+  msgs = msgs.map(function (m) { return m.id === id ? Object.assign({}, m, { read: true }) : m; });
+  localStorage.setItem('mn_messages', JSON.stringify(msgs));
+  renderMessages();
+}
+
+function markAllRead() {
+  var msgs = [];
+  try { msgs = JSON.parse(localStorage.getItem('mn_messages') || '[]'); } catch (_) {}
+  msgs = msgs.map(function (m) { return Object.assign({}, m, { read: true }); });
+  localStorage.setItem('mn_messages', JSON.stringify(msgs));
+  renderMessages();
+}
+
+function updateMsgBadge(msgs) {
+  var badge = document.getElementById('msg-badge');
+  if (!badge) return;
+  var unread = (msgs || []).filter(function (m) { return !m.read; }).length;
+  if (unread > 0) { badge.textContent = unread; badge.style.display = 'inline'; }
+  else { badge.style.display = 'none'; }
+}
+
+function fmtEngDate(str) {
+  if (!str) return '';
+  try {
+    return new Date(str).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  } catch (e) { return str; }
 }
 
 function toggleEngRow(headEl) {
