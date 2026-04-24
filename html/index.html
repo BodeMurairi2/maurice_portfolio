@@ -58,7 +58,6 @@
     </div>
   </section>
 
-  <!-- About Me -->
   <section id="about" class="section about-section">
     <div class="container">
       <div class="about-heading">
@@ -73,7 +72,6 @@
     </div>
   </section>
 
-  <!-- Languages / Tech stack -->
   <section class="section section-alt lang-section">
     <div class="container lang-grid">
       <div class="lang-pitch">
@@ -101,7 +99,6 @@
     </div>
   </section>
 
-  <!-- Technical Skills -->
   <section id="skills" class="section tech-skills-section">
     <div class="container">
       <div class="about-heading">
@@ -152,7 +149,6 @@
     </div>
   </section>
 
-  <!-- Featured Projects -->
   <section id="portfolio" class="section fp-section">
     <div class="container">
       <div class="fp-header">
@@ -211,7 +207,6 @@
     </div>
   </section>
 
-  <!-- Core Skills -->
   <section class="section cs-section">
     <div class="container">
       <div class="fp-header">
@@ -249,8 +244,6 @@
             <span>System Design</span>
           </div>
         </div>
-
-        <!-- Hidden extra skill groups — revealed by "View All Skills" -->
         <div class="cs-group cs-group-hidden">
           <p class="cs-group-label">Security &amp; Networking</p>
           <div class="cs-pills">
@@ -296,7 +289,6 @@
       </div>
 
       <div class="contact-dark-grid">
-        <!-- Left: info -->
         <div class="contact-dark-info">
           <h3>Let's Connect</h3>
           <p>Have questions? We'd love to hear from you.</p>
@@ -334,7 +326,6 @@
           </div>
         </div>
 
-        <!-- Right: form -->
         <form class="contact-dark-form" id="message-form">
           <div class="contact-field">
             <label for="c-name">Name</label>
@@ -366,7 +357,6 @@
       <span class="footer-brand">MN</span>
       <p class="footer-tagline">Building secure digital infrastructure for the next generation. Let's create technology that matters.</p>
       <div class="footer-social-icons">
-        <!-- Update these hrefs with your actual profile URLs -->
         <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noreferrer" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
@@ -399,12 +389,10 @@
       <div class="footer-contact-list">
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <!-- Update with your actual email -->
           <a href="mailto:mauricenshimyumukiza@nexvecta.com">mauricenshimyumukiza@nexvecta.com</a>
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <!-- Update with your actual phone -->
           <a href="tel:+250791430371">+250 791 430 371</a>
         </div>
         <div class="footer-contact-item">
@@ -420,94 +408,7 @@
   </div>
 </footer>
 
-<script src="../java script/script.js"></script>
-<script>
-/* ── Skills toggle ─────────────────────────────────── */
-(function () {
-  var btn = document.getElementById('skills-toggle-btn');
-  if (!btn) return;
-  var hidden = document.querySelectorAll('.cs-group-hidden');
-  btn.addEventListener('click', function () {
-    var expanded = btn.getAttribute('data-expanded') === 'true';
-    hidden.forEach(function (el) {
-      el.style.display = expanded ? 'none' : 'grid';
-    });
-    btn.setAttribute('data-expanded', expanded ? 'false' : 'true');
-    btn.textContent = expanded ? 'View All Skills' : 'Show Less';
-  });
-}());
-
-/* ── Contact form — Web3Forms ──────────────────────────
-   Setup: visit https://web3forms.com, enter your email,
-   copy your access key, and paste it below.
-   250 free submissions/month, no backend needed.
-──────────────────────────────────────────────────────── */
-(function () {
-  var WEB3FORMS_KEY = '7fa7d954-da1e-45e0-b40a-9f8b231b3343';
-
-  var form   = document.getElementById('message-form');
-  var status = document.getElementById('message-status');
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var name    = (document.getElementById('c-name')   || {}).value || '';
-    var email   = (document.getElementById('c-email')  || {}).value || '';
-    var subject = (document.getElementById('c-subject')|| {}).value || '';
-    var message = (document.getElementById('c-message')|| {}).value || '';
-
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      status.textContent = 'Please fill in all required fields.';
-      status.style.color = '#c0392b';
-      return;
-    }
-
-    var submitBtn = form.querySelector('[type="submit"]');
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-    status.textContent = '';
-
-    /* Save to localStorage so admin can read it in the dashboard */
-    try {
-      var msgs = JSON.parse(localStorage.getItem('mn_messages') || '[]');
-      msgs.unshift({ id: 'msg-' + Date.now(), name: name.trim(), email: email.trim(), subject: subject.trim(), message: message.trim(), date: new Date().toISOString(), read: false });
-      localStorage.setItem('mn_messages', JSON.stringify(msgs));
-    } catch (_) {}
-
-    /* Send email via Web3Forms (no-op when key is placeholder) */
-    if (WEB3FORMS_KEY && WEB3FORMS_KEY !== 'YOUR_WEB3FORMS_ACCESS_KEY') {
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, name: name.trim(), email: email.trim(), subject: subject.trim() || 'Portfolio Contact', message: message.trim() })
-      })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data.success) {
-          status.textContent = 'Message sent! I\'ll get back to you soon.';
-          status.style.color = '#1a7a45';
-          form.reset();
-        } else {
-          status.textContent = 'Something went wrong. Please email me directly.';
-          status.style.color = '#c0392b';
-        }
-      })
-      .catch(function () {
-        status.textContent = 'Network error. Your message was saved — please also email me directly.';
-        status.style.color = '#c0392b';
-      })
-      .finally(function () {
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
-      });
-    } else {
-      /* Key not configured — still saved to localStorage, show success */
-      status.textContent = 'Message received! I\'ll get back to you soon.';
-      status.style.color = '#1a7a45';
-      form.reset();
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
-    }
-  });
-}());
-</script>
+<script src="../js/script.js"></script>
+<script src="../js/index.js"></script>
 </body>
 </html>

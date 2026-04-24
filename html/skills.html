@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Article | MN Blog</title>
-<meta name="description" content="Read this article on engineering, systems, and social impact.">
+<title>Maurice Tyler | Skills</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
-<body data-page="blog-article">
-
-<header class="site-header header-dark">
+<body data-page="skills">
+<header class="site-header">
   <div class="container navbar">
-    <a class="brand" href="index.html">MN</a>
+    <a class="brand" href="index.html">Maurice Tyler</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-shell" aria-label="Primary">
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="index.html#contact">Contact Me</a></li>
-        <li><a class="active" href="blog.html">Blogs</a></li>
+        <li><a class="active" href="skills.html">Skills</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blogs</a></li>
       </ul>
     </nav>
     <a class="profile-link" href="admin-login.html" aria-label="Admin login">
@@ -34,11 +30,27 @@
   </div>
 </header>
 
-<main id="article-main">
-  <!-- Populated by blog.js -->
-  <div class="article-not-found" id="article-loading">
-    <p>Loading article…</p>
-  </div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Skills Page</p>
+      <h1>Professional skills grouped by category and backed by the API.</h1>
+      <p class="page-intro">Each card reflects skill data fetched from the backend and displayed with level indicators for a quick technical overview.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-stack">
+      <div class="toolbar">
+        <div>
+          <h2>Skill Categories</h2>
+          <p>Programming, tools, frameworks, and more.</p>
+        </div>
+        <span class="pill" id="skills-count">Loading...</span>
+      </div>
+      <div class="skill-category-grid" id="skills-groups"></div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -91,12 +103,11 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; 2026 Maurice Tyler. Built with passion for technology and social impact.</p>
-    <p>Open to internships, research opportunities, and collaborations.</p>
+    <p>&copy; 2026 Maurice Nshimyumukiza. All Rights Reserved.</p>
+    <p>Built with care &amp; deployed with purpose.</p>
   </div>
 </footer>
 
-<script src="../java script/script.js"></script>
-<script src="../java script/blog.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

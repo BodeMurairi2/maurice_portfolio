@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maurice Nshimyumukiza | Blog</title>
-<meta name="description" content="Insights on backend engineering, DevOps, API design, technology for social impact, and security.">
+<title>Article | MN Blog</title>
+<meta name="description" content="Read this article on engineering, systems, and social impact.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
-<body data-page="blog">
+<body data-page="blog-article">
 
 <header class="site-header header-dark">
   <div class="container navbar">
@@ -34,34 +34,11 @@
   </div>
 </header>
 
-<main>
-  <!-- Hero -->
-  <section class="blog-hero">
-    <div class="container">
-      <p class="eyebrow">Insights &amp; Articles</p>
-      <h1>Thoughts on engineering,<br>systems, and social impact.</h1>
-      <p>Writing about backend development, DevOps, API design, security, and technology that serves communities.</p>
-    </div>
-  </section>
-
-  <!-- Filter + Articles -->
-  <section class="section blog-filter-section">
-    <div class="container">
-
-      <div class="blog-topics-bar" role="tablist" aria-label="Filter articles by topic">
-        <button class="blog-topic-btn active" data-topic="all" role="tab" aria-selected="true">All Articles</button>
-        <button class="blog-topic-btn" data-topic="backend" role="tab" aria-selected="false">Backend Engineering</button>
-        <button class="blog-topic-btn" data-topic="devops" role="tab" aria-selected="false">DevOps &amp; Infrastructure</button>
-        <button class="blog-topic-btn" data-topic="apis" role="tab" aria-selected="false">APIs &amp; System Design</button>
-        <button class="blog-topic-btn" data-topic="impact" role="tab" aria-selected="false">Tech for Social Impact</button>
-        <button class="blog-topic-btn" data-topic="security" role="tab" aria-selected="false">Security &amp; Threats</button>
-      </div>
-
-      <div id="blog-posts-grid"></div>
-      <div class="blog-empty" id="blog-empty" hidden>No articles in this topic yet. Check back soon.</div>
-
-    </div>
-  </section>
+<main id="article-main">
+  <!-- Populated by blog.js -->
+  <div class="article-not-found" id="article-loading">
+    <p>Loading article…</p>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -119,7 +96,7 @@
   </div>
 </footer>
 
-<script src="../java script/script.js"></script>
-<script src="../java script/blog.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/blog.js"></script>
 </body>
 </html>

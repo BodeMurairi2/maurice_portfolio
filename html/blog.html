@@ -3,22 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maurice Tyler | Skills</title>
+<title>Maurice Nshimyumukiza | Blog</title>
+<meta name="description" content="Insights on backend engineering, DevOps, API design, technology for social impact, and security.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
-<body data-page="skills">
-<header class="site-header">
+<body data-page="blog">
+
+<header class="site-header header-dark">
   <div class="container navbar">
-    <a class="brand" href="index.html">Maurice Tyler</a>
+    <a class="brand" href="index.html">MN</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-shell" aria-label="Primary">
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="skills.html">Skills</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact Me</a></li>
+        <li><a class="active" href="blog.html">Blogs</a></li>
       </ul>
     </nav>
     <a class="profile-link" href="admin-login.html" aria-label="Admin login">
@@ -31,24 +35,31 @@
 </header>
 
 <main>
-  <section class="page-hero">
+  <!-- Hero -->
+  <section class="blog-hero">
     <div class="container">
-      <p class="eyebrow">Skills Page</p>
-      <h1>Professional skills grouped by category and backed by the API.</h1>
-      <p class="page-intro">Each card reflects skill data fetched from the backend and displayed with level indicators for a quick technical overview.</p>
+      <p class="eyebrow">Insights &amp; Articles</p>
+      <h1>Thoughts on engineering,<br>systems, and social impact.</h1>
+      <p>Writing about backend development, DevOps, API design, security, and technology that serves communities.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container section-stack">
-      <div class="toolbar">
-        <div>
-          <h2>Skill Categories</h2>
-          <p>Programming, tools, frameworks, and more.</p>
-        </div>
-        <span class="pill" id="skills-count">Loading...</span>
+  <!-- Filter + Articles -->
+  <section class="section blog-filter-section">
+    <div class="container">
+
+      <div class="blog-topics-bar" role="tablist" aria-label="Filter articles by topic">
+        <button class="blog-topic-btn active" data-topic="all" role="tab" aria-selected="true">All Articles</button>
+        <button class="blog-topic-btn" data-topic="backend" role="tab" aria-selected="false">Backend Engineering</button>
+        <button class="blog-topic-btn" data-topic="devops" role="tab" aria-selected="false">DevOps &amp; Infrastructure</button>
+        <button class="blog-topic-btn" data-topic="apis" role="tab" aria-selected="false">APIs &amp; System Design</button>
+        <button class="blog-topic-btn" data-topic="impact" role="tab" aria-selected="false">Tech for Social Impact</button>
+        <button class="blog-topic-btn" data-topic="security" role="tab" aria-selected="false">Security &amp; Threats</button>
       </div>
-      <div class="skill-category-grid" id="skills-groups"></div>
+
+      <div id="blog-posts-grid"></div>
+      <div class="blog-empty" id="blog-empty" hidden>No articles in this topic yet. Check back soon.</div>
+
     </div>
   </section>
 </main>
@@ -103,11 +114,12 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; 2026 Maurice Nshimyumukiza. All Rights Reserved.</p>
-    <p>Built with care &amp; deployed with purpose.</p>
+    <p>&copy; 2026 Maurice Tyler. Built with passion for technology and social impact.</p>
+    <p>Open to internships, research opportunities, and collaborations.</p>
   </div>
 </footer>
 
-<script src="../java script/script.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/blog.js"></script>
 </body>
 </html>
